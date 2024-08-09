@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Copytrack Photo Comparison Assistant</title>
+  <style>
+    body {
+      width: 200px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #328fd6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      margin-bottom: 1px;
+    }
+    button:hover {
+      background-color: #134397;
+    }
+    #button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    #stop-scroll {
+      background-color: red;
+    }
+    #stop-scroll:hover {
+      background-color: rgb(163, 0, 0);
+    }
+    #similarity-threshold-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1px;
+    }
+    #similarity-threshold-label {
+      display: block;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+    #similarity-threshold {
+      width: 40%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    #img-comparison {
+      width: 55%;
+      padding: 5px;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+    #copytrack {
+      color: #328fd6;
+    }
+    #select-all-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1px;
+    }
+    #select-all {
+      width: 45%;
+      height: 100%;
+    }
+    #amount {
+      width: 30%;
+      height: 100%;
+
+    }
+    #amount-label {
+      font-size: 12px;
+      width: 25%;
+      margin-left: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h3><span id="copytrack">Copytrack</span> Photo Comparison Assistant</h3>
+  <div id="button-container">
+    <button id="auto-scroll-down">Start scrolling</button>
+    <button id="stop-scroll">STOP</button>
+  </div>
+  <button id="select-massive-hits">Illegal all hits greater than 5</button>
+  <button id="check-links">Whitelist stock image links</button>
+  <button id="check-duplicate-names">Whitelist Duplicate hits</button>
+  <div id="similarity-threshold-container">
+    <label id="similarity-threshold-label" for="similarity-threshold">Similarity Threshold</label>
+    <input type="number" id="similarity-threshold" value="0.60" step="0.01" min="0" max="1">
+    <button id="img-comparison">Image comparison</button>
+  </div>
+  <button id="jump-to-selected-hit" >Jump to selected hit</button>
+  <div id="select-all-container">
+    <button id="select-all">Select all</button>
+    <label id="amount-label" for="amount">Amount</label>
+    <input type="number" id="amount" value="350" step="1">
+  </div>
+  <script src="popup.js"></script>
+  <script src="content.js"></script>
+</body>
+</html>
